@@ -1,3 +1,6 @@
+CREATE DATABASE store_db;
+USE store_db;
+
 CREATE TABLE users(
 	id 	int(255) AUTO_INCREMENT NOT NULL,
 	name  varchar(75) NOT NULL,
