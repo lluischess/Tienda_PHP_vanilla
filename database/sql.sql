@@ -13,7 +13,7 @@ CREATE TABLE users(
 	CONSTRAINT uq_email UNIQUE(email)
 )ENGINE=INNODB;
 
-INSERT INTO users VALUES(NULL,'admin','admin','admin@admin.com','admin','admin');
+INSERT INTO users VALUES(NULL,'admin','admin','admin@admin.com','admin','admin',NULL);
 
 CREATE TABLE orders(
 	id 	int(255) AUTO_INCREMENT NOT NULL,
@@ -44,7 +44,7 @@ CREATE TABLE products(
 	name_product  varchar(175) NOT NULL,
 	description_product TEXT,
     price float(5,2) NOT NULL,
-    stock int(5),
+    stock int(5) NOT NULL,
     offer float(5,2),
     date_publish date NOT NULL,
     image varchar(255),
@@ -54,5 +54,6 @@ CREATE TABLE products(
 
 CREATE TABLE categoris(
 	id 	int(255) AUTO_INCREMENT NOT NULL,
-	name_categori  varchar(75) NOT NULL
+	name_categori  varchar(75) NOT NULL,
+    CONSTRAINT pk_categoris PRIMARY KEY(id)
 )ENGINE=INNODB;
