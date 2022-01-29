@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -7,6 +7,15 @@
     <title>Tienda</title>
 </head>
 <body>
+    <!-- HEADER -->
+
+    <!-- NAV -->
+
+    <!-- LATERAL -->
+
+    <!-- CONTENT CENTRAL -->
+
+    <!-- FOOTER -->
     
 </body>
 </html>
