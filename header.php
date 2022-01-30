@@ -8,11 +8,14 @@
     <link rel="stylesheet" href="css/style.css"/>
 </head>
 <body>
-<header>
-    <div id="logo">
-        <img src="assets/img/logo.PNG" alt="logo">
-        <a href="index.php">
-            Tienda de Warhammer
-        </a>
-    </div>
-</header>
+    <div id="container1">
+        <div id="header">
+            <header>
+                <div id="logo">
+                    <img src="assets/img/logo.PNG" alt="logo">
+                    <a href="index.php">
+                        Tienda de Warhammer
+                    </a>
+                </div>
+            </header>
+        </div>
