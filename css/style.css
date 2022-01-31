@@ -50,7 +50,7 @@ body{
 }
 
 .product img{
-    width: 100px;
+    width: 150px;
 }
 
 /* NAV */
@@ -160,13 +160,46 @@ select{
 
 input[type="button"],
 input[type="submit"],
-button{
+button, .button{
     display: block;
     border-radius: 2px;
     width: auto;
     padding: 5px;
     color: rgb(255, 255, 255);
     background: #2fa2d8;
-    border: 1px solid #646161;
     cursor: pointer;
+}
+
+.button{
+    background: #22a81d;
+    margin: 2px;
+}
+
+/* CONTAINER */
+
+#central{
+    width: 71%;
+    float: right;
+    border-left: 1px solid #ccc;
+    box-shadow: -5px -1px 5px #ddd;
+    padding: 8px;
+}
+
+#central h1{
+    font-size: 25px;
+    margin-bottom: 5px;
+    font-weight: normal;
+    letter-spacing: 1px;
+    border-bottom: 1px solid #646161;
+    margin-bottom: 20px;
+}
+
+/* PRODUCTS */
+
+.product{
+    width: 26%;
+    float: left;
+    margin-left: 10px;
+    margin-right: 10px;
+    text-align: center;
 }
