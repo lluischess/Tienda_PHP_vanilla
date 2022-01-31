@@ -1,5 +1,6 @@
 <aside id="lateral">
     <div id="login" class="block_aside">
+        <h3>Login</h3>
         <form action="" method="POST">
             <label for="email">Email:</label>
             <input type="text" name="email">
@@ -8,7 +9,10 @@
             <input type="submit" value="enviar">
         </form>
 
-        <a href="">Mis pedidos</a>
-        <a href="">Gestionar categorias</a>
+        <ul>
+            <li><a href="">Mis pedidos</a></li>
+            <li><a href="">Gestionar categorias</a></li>
+        </ul>
+        
     </div>
 </aside>
