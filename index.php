@@ -1,11 +1,13 @@
     <?php 
     
-    include_once("autoload_lluis.php");
+    include_once("autoload.php");
     
     if(isset($_GET['controller'])){
         $nombre_controlador = $_GET['controller'].'Controller';
+        echo $nombre_controlador;
+        echo $_GET['action'];
     } else {
-        echo "La pagina no existe";
+        echo "La pagina no existe 1";
         exit();
     }
 
@@ -16,11 +18,11 @@
             $action = $_GET['action'];
             $controlador->$action();
         } else {
-            echo "La pagina no existe";
+            echo "La pagina no existe 2";
         }
 
     } else {
-        echo "La pagina no existe";
+        echo "La pagina no existe 3";
     }
     
     
