@@ -1,49 +1,43 @@
-    <?php 
-    
-    include_once("autoload.php");
-    
-    if(isset($_GET['controller'])){
-        $nombre_controlador = $_GET['controller'];
-    } else {
-        echo "La pagina no existe 1";
-        exit();
-    }
+     <!-- HEADER -->
+     <?php include_once("views/layout/header.php"); ?>
+     <!-- NAV -->
+     <?php include_once("views/layout/nav.php"); ?>
 
-    if(class_exists($nombre_controlador)){
-        $controlador = new $nombre_controlador();
+     <div id="content">
+         <!-- LATERAL -->
+         <?php include_once("views/layout/lateral.php"); ?>
 
-        if(isset($_GET['action']) && method_exists($controlador, $_GET['action'])){
-            $action = $_GET['action'];
-            $controlador->$action();
-        } else {
-            echo "La pagina no existe 2";
-        }
+         <?php
 
-    } else {
-        echo "La pagina no existe 3";
-    }
-    
-    
-    
-    ?>
-    <!-- HEADER -->
-    
-    <?php include_once("header.php"); ?>
+            include_once("autoload.php");
 
-    <!-- NAV -->
-    <?php include_once("nav.php"); ?>
+            if (isset($_GET['controller'])) {
+                $nombre_controlador = $_GET['controller'];
+            } else {
+                echo "La pagina no existe 1";
+                exit();
+            }
 
-    <div id="content">
-        <!-- LATERAL -->
-        <?php include_once("lateral.php"); ?>
+            if (class_exists($nombre_controlador)) {
+                $controlador = new $nombre_controlador();
 
-        <!-- CONTENT CENTRAL -->
-        <?php include_once("content.php"); ?>
+                if (isset($_GET['action']) && method_exists($controlador, $_GET['action'])) {
+                    $action = $_GET['action'];
+                    $controlador->$action();
+                } else {
+                    echo "La pagina no existe 2";
+                }
+            } else {
+                echo "La pagina no existe 3";
+            }
 
-    </div>
+            ?>
 
-    <!-- FOOTER -->
-    <?php include_once("footer.php"); ?>
+     </div>
 
-</body>
-</html>
+     <!-- FOOTER -->
+     <?php include_once("views/layout/footer.php"); ?>
+
+     </body>
+
+     </html>

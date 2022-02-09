@@ -1,5 +1,5 @@
 <div id="central">
-    <h1>Productos</h1>
+    <h1>Productos destacados</h1>
     <div class="product">
         <img src="assets/img/logo.PNG" alt="Producto">
         <h2>Marines Espaciales</h2>

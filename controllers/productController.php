@@ -3,6 +3,7 @@
 class productController{
 
     public function index(){
-        echo "Controlador product index";
+        // Cargamos Destacados
+        require_once "views/products/destacados.php";
     }
 }
