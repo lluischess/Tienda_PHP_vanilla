@@ -3,9 +3,7 @@
     include_once("autoload.php");
     
     if(isset($_GET['controller'])){
-        $nombre_controlador = $_GET['controller'].'Controller';
-        echo $nombre_controlador;
-        echo $_GET['action'];
+        $nombre_controlador = $_GET['controller'];
     } else {
         echo "La pagina no existe 1";
         exit();
