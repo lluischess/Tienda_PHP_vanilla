@@ -1,6 +1,8 @@
      <!-- HEADER -->
      <?php include_once("config/parameters.php"); ?>
+     <?php include_once("config/db.php"); ?>
      <?php include_once("views/layout/header.php"); ?>
+
      <!-- NAV -->
      <?php include_once("views/layout/nav.php"); ?>
     
