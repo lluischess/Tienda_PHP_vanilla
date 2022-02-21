@@ -1,6 +1,6 @@
 <h1>Registro</h1>
 
-<form action="index.php?controller=userController&action=save" method="post">
+<form action="<?=domain?>userController/save" method="post">
     <label for="nombre">Nombre</label>
     <input type="text" name="nombre" required>
 

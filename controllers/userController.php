@@ -12,7 +12,11 @@ class userController{
 
     public function save(){
         if(isset($_POST)){
-            var_dump($_POST);
+            $usuario = new Usuario();
+            $usuario->setNombre($_POST['nombre']);
+            $usuario->setApellido($_POST['apellidos']);
+            $usuario->setEmail($_POST['email']);
+            $usuario->setPassword($_POST['pass']);
         }
     }
 }
