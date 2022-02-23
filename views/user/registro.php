@@ -1,5 +1,13 @@
 <h1>Registro</h1>
 
+<?php
+if (isset($_SESSION['register']) && $_SESSION['register']){
+    echo "<strong>Registro completado</strong>";
+} else{
+    echo "<strong>Registro fallido</strong>";
+}
+?>
+
 <form action="<?=domain?>userController/save" method="post">
     <label for="nombre">Nombre</label>
     <input type="text" name="nombre" required>
