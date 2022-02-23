@@ -1,11 +1,14 @@
 <h1>Registro</h1>
 
 <?php
-if (isset($_SESSION['register']) && $_SESSION['register']){
+if (isset($_SESSION['register']) && $_SESSION['register'] == 'complete'){
     echo "<strong>Registro completado</strong>";
-} else{
+} elseif (isset($_SESSION['register']) && $_SESSION['register'] == 'failed'){
     echo "<strong>Registro fallido</strong>";
 }
+// eliminamos sesion de registro
+Utils::deleteSession('register');
+
 ?>
 
 <form action="<?=domain?>userController/save" method="post">

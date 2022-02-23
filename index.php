@@ -1,5 +1,6 @@
      <!-- HEADER -->
-     <?php include_once("config/parameters.php"); 
+     <?php include_once("config/parameters.php");
+     include_once("helper/utils.php"); 
      session_start();
      ?>
      <?php include_once("config/db.php"); ?>
