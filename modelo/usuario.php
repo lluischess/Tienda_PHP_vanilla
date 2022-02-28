@@ -84,4 +84,26 @@ class Usuario
 
         return $result;
     }
+
+    public function login(){
+
+        $sql ="SELECT * FROM users WHERE email='".$this->getEmail()."'";
+        $credenciales = $this->db->query($sql);
+
+        if ($credenciales && $credenciales->num_rows == 1){
+            $usuario = $credenciales->fetch_object();
+
+            // Comprovamos la contraseña
+            $verify = password_verify($this->getPassword(),$usuario->password_user);
+            if ($verify){
+                $resultado = $usuario;
+            }else{
+                $resultado = false;
+            }
+        } else{
+            $resultado = false;
+        }
+
+        return $resultado;
+    }
 }

@@ -32,4 +32,23 @@ class userController{
         }
         header("Location:".domain.'userController/registro');
     }
+
+    public function login(){
+        if (isset($_POST)) {
+            // Itentificar usuario
+            $usuario = new Usuario();
+            $usuario->setEmail($_POST['email']);
+            $usuario->setPassword($_POST['password']);
+            
+            $login = $usuario->login();
+            var_dump($login);
+            die();
+
+            // Comparar con datos de la BBDD
+
+            // Crear sessión de login
+        }
+
+        header("Location".domain);
+    }
 }
