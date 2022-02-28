@@ -6,7 +6,7 @@ if (isset($_SESSION['register']) && $_SESSION['register'] == 'complete'){
 } elseif (isset($_SESSION['register']) && $_SESSION['register'] == 'failed'){
     echo "<strong>Registro fallido</strong>";
 }
-// eliminamos sesion de registro
+// Eliminamos sesion de registro
 Utils::deleteSession('register');
 
 ?>
