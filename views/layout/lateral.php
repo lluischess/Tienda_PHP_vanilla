@@ -1,7 +1,7 @@
 <aside id="lateral">
     <div id="login" class="block_aside">
         <h3>Login</h3>
-        <form action="" method="POST">
+        <form action="<?=domain?>userController/login" method="POST">
             <label for="email">Email:</label>
             <input type="text" name="email">
             <label for="password">Password:</label>
