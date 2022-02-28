@@ -41,12 +41,16 @@ class userController{
             $usuario->setPassword($_POST['password']);
             
             $login = $usuario->login();
-            var_dump($login);
-            die();
-
-            // Comparar con datos de la BBDD
-
             // Crear sessión de login
+            if ($login && is_object($login)){
+                $_SESSION['user_login'] = $login;
+                
+                if ($login->rol == 'admin'){
+                    $_SESSION['admin_login'] = true;
+                }
+            }else{
+                $_SESSION['error_login'] = "Error al identificarte";
+            }
         }
 
         header("Location".domain);
