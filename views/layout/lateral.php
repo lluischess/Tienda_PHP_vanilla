@@ -13,7 +13,9 @@
             <h3><?= $_SESSION['user_login']->name_user. " " .$_SESSION['user_login']->lastname ?></h3>
         <?php endif; ?>
         <ul>
-            <li><a href="<?=domain?>userController/logout">Cerrar sesión</a></li>
+            <?php if (isset($_SESSION['user_login']) || isset($_SESSION['admin_login'])) { ?>
+                <li><a href="<?=domain?>userController/logout">Cerrar sesión</a></li>
+            <?php } ?>
             <li><a href="">Mis pedidos</a></li>
             <li><a href="">Gestionar categorias</a></li>
         </ul>
