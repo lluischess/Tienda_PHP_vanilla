@@ -15,9 +15,12 @@
         <ul>
             <?php if (isset($_SESSION['user_login']) || isset($_SESSION['admin_login'])) { ?>
                 <li><a href="<?=domain?>userController/logout">Cerrar sesión</a></li>
-            <?php } ?>
+                <?php } ?>
             <li><a href="">Mis pedidos</a></li>
-            <li><a href="">Gestionar categorias</a></li>
+            <?php if (isset($_SESSION['admin_login'])) { ?>
+                <li><a href="">Gestionar Pedidos</a></li>
+                <li><a href="">Gestionar categorias</a></li>
+                <?php } ?>
         </ul>
         
     </div>

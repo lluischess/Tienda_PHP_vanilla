@@ -106,4 +106,6 @@ class Usuario
 
         return $resultado;
     }
+
+    
 }
