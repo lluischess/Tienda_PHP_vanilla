@@ -13,24 +13,32 @@ class Category
         $this->db = Database::Connect();
     }
 
-    function getId(){
+    function getId()
+    {
         return $this->id;
     }
 
-    function getNombre(){
+    function getNombre()
+    {
         return $this->nombre;
     }
 
-    function setId($id){
+    function setId($id)
+    {
         $this->id = $id;
     }
 
-    function setNombre($nombre){
+    function setNombre($nombre)
+    {
         $this->nombre = $nombre;
     }
 
-    public function getCategoris(){
+    public function getAllCategoris()
+    {
         $sql = "SELECT * FROM categoris";
-        
+
+        $categorias = $this->db->query($sql);
+
+        return $categorias;
     }
 }
