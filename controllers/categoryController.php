@@ -9,4 +9,12 @@ class categoryController{
         $all_categoris = $categorias->getAllCategoris();
         require_once 'views/category/index.php';
     }
+
+    public function create(){
+        require_once 'views/category/create.php';
+    }
+
+    public function save(){
+
+    }
 }
