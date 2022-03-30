@@ -28,14 +28,10 @@ CREATE TABLE orders(
     CONSTRAINT fk_orders_users FOREIGN KEY(user_id) REFERENCES users(id)
 )ENGINE=INNODB;
 
-CREATE TABLE order_details(
+CREATE TABLE categoris(
 	id 	int(255) AUTO_INCREMENT NOT NULL,
-	order_id  int(255) NOT NULL,
-	product_id int(255) NOT NULL,
-    units int(10) NOT NULL,
-    CONSTRAINT pk_order_details PRIMARY KEY(id),
-    CONSTRAINT fk_order_details_orders FOREIGN KEY(order_id) REFERENCES orders(id),
-    CONSTRAINT fk_order_details_products FOREIGN KEY(product_id) REFERENCES products(id)
+	name_categori  varchar(75) NOT NULL,
+    CONSTRAINT pk_categoris PRIMARY KEY(id)
 )ENGINE=INNODB;
 
 CREATE TABLE products(
@@ -52,8 +48,15 @@ CREATE TABLE products(
     CONSTRAINT fk_products_categoris FOREIGN KEY(category_id) REFERENCES categoris(id)
 )ENGINE=INNODB;
 
-CREATE TABLE categoris(
+CREATE TABLE order_details(
 	id 	int(255) AUTO_INCREMENT NOT NULL,
-	name_categori  varchar(75) NOT NULL,
-    CONSTRAINT pk_categoris PRIMARY KEY(id)
+	order_id  int(255) NOT NULL,
+	product_id int(255) NOT NULL,
+    units int(10) NOT NULL,
+    CONSTRAINT pk_order_details PRIMARY KEY(id),
+    CONSTRAINT fk_order_details_orders FOREIGN KEY(order_id) REFERENCES orders(id),
+    CONSTRAINT fk_order_details_products FOREIGN KEY(product_id) REFERENCES products(id)
 )ENGINE=INNODB;
+
+
+
