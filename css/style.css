@@ -87,6 +87,16 @@ body{
     border-bottom: 4px solid #d0e8f3;
 }
 
+table{
+    text-align: center;
+    width: 100%;
+    border: 1px solid #555;
+}
+
+td{
+    border-top: 1px;
+}
+
 /* CONTENT */
 #content{
     margin: 0px auto;
@@ -173,6 +183,12 @@ button, .button{
 .button{
     background: #22a81d;
     margin: 2px;
+}
+
+.button-s{
+    width: 30%;
+    text-align: center;
+    margin-bottom: 10px;
 }
 
 /* CONTAINER */
