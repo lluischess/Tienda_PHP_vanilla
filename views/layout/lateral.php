@@ -18,8 +18,8 @@
                 <?php } ?>
             <li><a href="">Mis pedidos</a></li>
             <?php if (isset($_SESSION['admin_login'])) { ?>
-                <li><a href="">Gestionar Pedidos</a></li>
-                <li><a href="">Gestionar categorias</a></li>
+                <li><a href="<?=domain?>orderController/index">Gestionar Pedidos</a></li>
+                <li><a href="<?=domain?>categoryController/index">Gestionar categorias</a></li>
                 <?php } ?>
         </ul>
         

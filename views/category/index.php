@@ -1,5 +1,7 @@
 <h1>Gestion de Categorias</h1>
-
+<?php if(!isset($_SESSION['user_login']) || !isset($_SESSION['admin_login'])): ?>
+    <p>NO ESTAS LOGEADO</p>
+    <?php else: ?>
 <a href="<?=domain?>categoryController/crear" class="button button-s"> Crear Categoria </a>
 
 <br>
@@ -15,3 +17,5 @@
         </tr>
     <?php } ?>
 </table>
+
+<?php endif; ?>
