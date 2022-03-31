@@ -1,7 +1,7 @@
 <IfModule mod_rewrite.c>
 
 RewriteEngine on
-ErrorDocument 404 http://localhost/php_tienda/error/idex
+ErrorDocument 404 http://localhost/Tienda_PHP_vanilla/error/idex
 
 RewriteCond %{SCRIPT_FILENAME} !-d
 RewriteCond %{SCRIPT_FILENAME} !-f

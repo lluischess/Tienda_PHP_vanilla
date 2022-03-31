@@ -3,6 +3,6 @@
 <form action="<?=domain?>categoryController/save" method="post">
 
     <label for="categoryname">Nombre</label>
-    <input type="text" name="categoryname" id="categoryname">
+    <input type="text" name="categoryname" id="categoryname" require>
     <input type="submit" value="Guardar">
 </form>

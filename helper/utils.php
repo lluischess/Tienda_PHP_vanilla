@@ -10,4 +10,12 @@ class Utils {
         }
         return $name;
     }
+
+    public static function isAdmin(){
+        if(!isset($_SESSION['admin_login'])){
+            header("Location:".domain);
+        } else{
+            return true;
+        }
+    }
 }
