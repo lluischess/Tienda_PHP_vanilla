@@ -18,4 +18,12 @@ class Utils {
             return true;
         }
     }
+
+    public static function showcategorias(){
+        require_once "modelo/category.php";
+        $categorias = new Category();
+        $all_categoris = $categorias->getAllCategoris();
+
+        return $all_categoris;
+    }
 }
