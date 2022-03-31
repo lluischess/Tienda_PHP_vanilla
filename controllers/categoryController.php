@@ -2,25 +2,34 @@
 
 require_once "modelo/category.php";
 
-class categoryController{
+class categoryController
+{
 
-    public function index(){
+    public function index()
+    {
+        Utils::isAdmin();
         $categorias = new Category();
         $all_categoris = $categorias->getAllCategoris();
         require_once 'views/category/index.php';
     }
 
-    public function create(){
+    public function create()
+    {
+        Utils::isAdmin();
+
         require_once 'views/category/create.php';
     }
 
-    public function save(){
-        if (isset($_POST['categoryname'])){
+    public function save()
+    {
+        Utils::isAdmin();
+
+        if (isset($_POST['categoryname'])) {
 
             $category = new Category();
             $category->setNombre($_POST['categoryname']);
 
-            if ($category->save()){
+            if ($category->save()) {
                 echo "Categoria creada correctamente";
             } else {
                 echo "ERROR al crear la categoria";
@@ -29,6 +38,6 @@ class categoryController{
         } else {
             echo "ERROR del campo del Nombre";
         }
-        header("Location:".domain.'category/index');
+        header("Location:" . domain . 'category/index');
     }
 }

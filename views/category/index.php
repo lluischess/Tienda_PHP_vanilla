@@ -2,7 +2,7 @@
 <?php if(!isset($_SESSION['user_login']) || !isset($_SESSION['admin_login'])): ?>
     <p>NO ESTAS LOGEADO</p>
     <?php else: ?>
-<a href="<?=domain?>categoryController/crear" class="button button-s"> Crear Categoria </a>
+<a href="<?=domain?>categoryController/create" class="button button-s"> Crear Categoria </a>
 
 <br>
 <table border="1">

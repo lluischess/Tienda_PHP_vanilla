@@ -15,6 +15,8 @@
         <ul>
             <?php if (isset($_SESSION['user_login']) || isset($_SESSION['admin_login'])) { ?>
                 <li><a href="<?=domain?>userController/logout">Cerrar sesión</a></li>
+                <?php } else{ ?>
+                    <li><a href="<?=domain?>userController/registro">Registro</a></li>
                 <?php } ?>
             <li><a href="">Mis pedidos</a></li>
             <?php if (isset($_SESSION['admin_login'])) { ?>
