@@ -38,6 +38,6 @@ class categoryController
         } else {
             echo "ERROR del campo del Nombre";
         }
-        header("Location:" . domain . 'category/index');
+        header("Location:" . domain . 'categoryController/index');
     }
 }
