@@ -1,5 +1,7 @@
 <?php
 
+require_once 'modelo/producto.php';
+
 class productController
 {
 
@@ -10,6 +12,10 @@ class productController
     }
 
     public function gestion(){
+        Utils::isAdmin();
+
+        $producto = new Producto();
+        $productos = $producto->getAll();
 
         require_once "views/products/gestion.php";
     }
