@@ -3,6 +3,13 @@
 <?php if(!isset($_SESSION['user_login']) || !isset($_SESSION['admin_login'])): ?>
     <p>NO ESTAS LOGEADO</p>
 <?php else: ?>
+
+<?php if(isset($_SESSION['producto']) && $_SESSION['producto'] == 'complete'): ?>
+    <p>Se ha añadido un producto nuevo correctamente</p>
+<?php elseif (isset($_SESSION['producto']) && $_SESSION['producto'] == 'failed'): ?>
+    <p>Error al crear el nuevo producto</p>
+<?php endif; ?>
+<?php Utils::deleteSession('producto'); ?>
     <a href="<?=domain?>productController/create" class="button button-s"> Crear Producto </a>
 
     <br>

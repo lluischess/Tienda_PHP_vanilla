@@ -52,10 +52,10 @@ class productController
                 }
 
             } else {
-                $_SESSION['producto'] = "norellenado";
+                $_SESSION['producto'] = "failed";
             }
         } else {
-            $_SESSION['producto'] = "norellenado";
+            $_SESSION['producto'] = "failed";
         }
         header("Location:" . domain . 'productController/gestion');
     }
