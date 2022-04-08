@@ -141,6 +141,7 @@ td{
 input[type="text"],
 input[type="password"],
 input[type="email"],
+input[type="submit"],
 label{
     display: block;
     width: 95%;
@@ -151,7 +152,10 @@ label{
 input[type="text"],
 input[type="password"],
 input[type="email"],
-select{
+input[type="number"],
+input[type="submit"],
+input[type="file"],
+select, textarea{
     border: 1px solid gray;
     box-shadow: 0px 0px 2px #ccc inset;
     background: #ffffff;
