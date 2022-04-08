@@ -19,4 +19,9 @@ class productController
 
         require_once "views/products/gestion.php";
     }
+
+    public function create(){
+
+        require_once "views/products/create.php";
+    }
 }
