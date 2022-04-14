@@ -10,6 +10,14 @@
     <p>Error al crear el nuevo producto</p>
 <?php endif; ?>
 <?php Utils::deleteSession('producto'); ?>
+
+    <?php if(isset($_SESSION['delete_product']) && $_SESSION['delete_product'] == 'complete'): ?>
+        <p>Se ha eliminado un producto correctamente</p>
+    <?php elseif (isset($_SESSION['delete_product']) && $_SESSION['delete_product'] == 'failed'): ?>
+        <p>Error al borrar el producto selecciónado</p>
+    <?php endif; ?>
+    <?php Utils::deleteSession('delete_product'); ?>
+
     <a href="<?=domain?>productController/create" class="button button-s"> Crear Producto </a>
 
     <br>

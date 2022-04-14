@@ -101,6 +101,11 @@ class Producto {
         return $productos;
     }
 
+    public function getOne(){
+        $producto = $this->db->query("SELECT * FROM products WHERE id ={$this->getId()}");
+        return $producto->fetch_object();
+    }
+
     public function save(){
         $sql = "INSERT INTO products VALUES(NULL,'{$this->getCategoria_id()}', '{$this->getName()}','{$this->getDescription()}','{$this->getPrice()}','{$this->getStock()}',NULL,CURDATE(),'{$this->getImg()}')";
         $save = $this->db->query($sql);
@@ -118,6 +123,18 @@ class Producto {
         $delete = $this->db->query($sql);
         $result = false;
         if ($delete){
+            $result = true;
+        }
+
+        return $result;
+    }
+
+    public function edit(){
+        $sql = "UPDATE products SET category_id='{$this->getCategoria_id()}', name_product='{$this->getName()}', description_product='{$this->getDescription()}', price='{$this->getPrice()}', stock='{$this->getStock()}', image='{$this->getImg()}' WHERE id={$this->id}";
+        $edit = $this->db->query($sql);
+
+        $result = false;
+        if ($edit){
             $result = true;
         }
 
