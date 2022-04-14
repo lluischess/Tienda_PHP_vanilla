@@ -102,7 +102,7 @@ class Producto {
     }
 
     public function save(){
-        $sql = "INSERT INTO products VALUES(NULL,'{$this->getCategoria_id()}', '{$this->getName()}','{$this->getDescription()}','{$this->getPrice()}','{$this->getStock()}',NULL,CURDATE(),NULL)";
+        $sql = "INSERT INTO products VALUES(NULL,'{$this->getCategoria_id()}', '{$this->getName()}','{$this->getDescription()}','{$this->getPrice()}','{$this->getStock()}',NULL,CURDATE(),'{$this->getImg()}')";
         $save = $this->db->query($sql);
 
         $result = false;

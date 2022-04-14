@@ -174,7 +174,7 @@ select{
 
 input[type="button"],
 input[type="submit"],
-button, .button{
+button, .button, .buttonb{
     display: block;
     border-radius: 2px;
     width: auto;
@@ -186,6 +186,11 @@ button, .button{
 
 .button{
     background: #22a81d;
+    margin: 2px;
+}
+
+.buttonb{
+    background: red;
     margin: 2px;
 }
 

@@ -1,6 +1,6 @@
 <h1>Creat nuevos productos</h1>
 
-<form action="<?=domain?>productController/save" method="post">
+<form action="<?=domain?>productController/save" method="post" enctype="multipart/form-data">
     <label for="nombre">Nombre</label>
     <input type="text" name="nombre" id="nombre">
 

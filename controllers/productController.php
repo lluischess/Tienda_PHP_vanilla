@@ -45,6 +45,23 @@ class productController
                 $producto->setPrice($price);
                 $producto->setStock($stock);
 
+                // Guardar imagen
+                $archivo = $_FILES['imagen'];
+                $filename = $archivo['name'];
+                $mimetype = $archivo['type'];
+
+                if ($mimetype == "image/jpg" || $mimetype == "image/png") {
+
+
+                    if(!is_dir('uploads/img')){
+                        mkdir('uploads/img',0777,true);
+                    }
+
+                    move_uploaded_file($archivo['tmp_name'],'uploads/img/'.$filename);
+                    $producto->setImg($filename);
+                }
+
+
                 if ($producto->save()) {
                     $_SESSION['producto'] = "complete";
                 } else {

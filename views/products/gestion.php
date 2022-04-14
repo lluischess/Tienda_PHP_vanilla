@@ -19,6 +19,8 @@
             <th>Nombre</th>
             <th>Precio</th>
             <th>Stock</th>
+            <th>Editar</th>
+            <th>Borrar</th>
         </tr>
         <?php while ($prod = $productos->fetch_object()){ ?>
             <tr>
@@ -26,6 +28,8 @@
                 <td><?=$prod->name_product?></td>
                 <td><?=$prod->price?></td>
                 <td><?=$prod->stock?></td>
+                <td><a href="<?=domain?>productController/create" class="button">Editar</a></td>
+                <td><a href="<?=domain?>productController/create" class="buttonb">Borrar</a></td>
             </tr>
         <?php } ?>
     </table>
