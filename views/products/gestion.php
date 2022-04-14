@@ -28,8 +28,8 @@
                 <td><?=$prod->name_product?></td>
                 <td><?=$prod->price?></td>
                 <td><?=$prod->stock?></td>
-                <td><a href="<?=domain?>productController/create" class="button">Editar</a></td>
-                <td><a href="<?=domain?>productController/create" class="buttonb">Borrar</a></td>
+                <td><a href="<?=domain?>productController/editar&id=<?=$prod->id?>" class="button">Editar</a></td>
+                <td><a href="<?=domain?>productController/eliminar&id=<?=$prod->id?>" class="buttonb">Borrar</a></td>
             </tr>
         <?php } ?>
     </table>

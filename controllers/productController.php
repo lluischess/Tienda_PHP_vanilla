@@ -76,4 +76,27 @@ class productController
         }
         header("Location:" . domain . 'productController/gestion');
     }
+
+    public function editar(){
+        var_dump($_GET);
+    }
+
+    public function eliminar(){
+        Utils::isAdmin();
+
+        if(isset($_GET['id'])){
+
+            $producto = new Producto();
+            $producto->setId($_GET['id']);
+
+            if($producto->delete()){
+                $_SESSION['delete_product'] = "complete";
+            }else{
+                $_SESSION['delete_product'] = "failed";
+            }
+
+        }
+
+        header('Location:'. domain ."productController/gestion");
+    }
 }
