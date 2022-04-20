@@ -130,8 +130,12 @@ class Producto {
     }
 
     public function edit(){
-        $sql = "UPDATE products SET category_id='{$this->getCategoria_id()}', name_product='{$this->getName()}', description_product='{$this->getDescription()}', price='{$this->getPrice()}', stock='{$this->getStock()}', image='{$this->getImg()}' WHERE id={$this->id}";
-        $edit = $this->db->query($sql);
+        if ($this->getImg() != null) {
+            $sql = "UPDATE products SET category_id='{$this->getCategoria_id()}', name_product='{$this->getName()}', description_product='{$this->getDescription()}', price='{$this->getPrice()}', stock='{$this->getStock()}', image='{$this->getImg()}' WHERE id={$this->id}";
+        } else{
+            $sql = "UPDATE products SET category_id='{$this->getCategoria_id()}', name_product='{$this->getName()}', description_product='{$this->getDescription()}', price='{$this->getPrice()}', stock='{$this->getStock()}' WHERE id={$this->id}";
+        }
+            $edit = $this->db->query($sql);
 
         $result = false;
         if ($edit){

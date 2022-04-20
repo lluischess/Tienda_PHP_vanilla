@@ -1,7 +1,7 @@
 
 <?php if (isset($edit) && isset($pro) && is_object($pro)): ?>
 <h1>Editar producto <?= $pro->name_product?></h1>
-    <?php $url_action = domain."productController/update&id=".$pro->id; ?>
+    <?php $url_action = domain."productController/save&id=".$pro->id; ?>
 <?php else: ?>
 <h1>Crear nuevo producto</h1>
     <?php $url_action = domain."productController/save"; ?>
