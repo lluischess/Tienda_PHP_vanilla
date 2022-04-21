@@ -13,7 +13,7 @@
             <header>
                 <div id="logo">
                     <img src="<?=domain?>assets/img/logo.PNG" alt="logo">
-                    <a href="index.php">
+                    <a href="<?=domain?>index.php">
                         Tienda de Warhammer
                     </a>
                 </div>
