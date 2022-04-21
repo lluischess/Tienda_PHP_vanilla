@@ -1,6 +1,7 @@
 <?php
 
 require_once "modelo/category.php";
+require_once "modelo/producto.php";
 
 class categoryController
 {
@@ -39,5 +40,15 @@ class categoryController
             echo "ERROR del campo del Nombre";
         }
         header("Location:" . domain . 'categoryController/index');
+    }
+
+    public function ver(){
+        if (isset($_GET['id'])){
+            $categoria = new Category();
+            $categoria->setId($_GET['id']);
+            $category = $categoria->getOne();
+            $category = $category->fetch_object();
+        }
+        require_once 'views/category/ver.php';
     }
 }

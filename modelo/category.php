@@ -42,6 +42,14 @@ class Category
         return $categorias;
     }
 
+    public function getOne(){
+        $sql = "SELECT * FROM categoris WHERE id={$this->getId()}";
+
+        $categoria = $this->db->query($sql);
+
+        return $categoria;
+    }
+
     public function save(){
         $sql = "INSERT INTO categoris VALUES(NULL, '{$this->getNombre()}')";
         $save = $this->db->query($sql);
