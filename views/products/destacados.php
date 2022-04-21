@@ -1,24 +1,13 @@
 <div id="central">
     <h1>Productos destacados</h1>
+
+    <?php while ($pro = $productos->fetch_object()): ?>
     <div class="product">
-        <img src="assets/img/logo.PNG" alt="Producto">
-        <h2>Marines Espaciales</h2>
-        <p>Miniaturas de Warhammer</p>
-        <p>30 euros</p>
+        <img src="<?=domain?>uploads/img/<?=$pro->image?>" alt="Producto">
+        <h2><?=$pro->name_product?></h2>
+        <p><?=$pro->description_product?></p>
+        <p><?=$pro->price?></p>
         <a href="" class="button">Comprar</a>
     </div>
-    <div class="product">
-        <img src="assets/img/logo.PNG" alt="Producto">
-        <h2>Marines Espaciales</h2>
-        <p>Miniaturas de Warhammer</p>
-        <p>30 euros</p>
-        <a href="" class="button">Comprar</a>
-    </div>
-    <div class="product">
-        <img src="assets/img/logo.PNG" alt="Producto">
-        <h2>Marines Espaciales</h2>
-        <p>Miniaturas de Warhammer</p>
-        <p>30 euros</p>
-        <a href="" class="button">Comprar</a>
-    </div>
+    <?php endwhile;?>
 </div>

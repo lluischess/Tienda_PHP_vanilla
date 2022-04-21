@@ -8,6 +8,8 @@ class productController
     public function index()
     {
         // Cargamos Destacados
+        $producto = new Producto();
+        $productos = $producto->getRandom(6);
         require_once "views/products/destacados.php";
     }
 

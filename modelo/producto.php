@@ -106,6 +106,11 @@ class Producto {
         return $producto->fetch_object();
     }
 
+    public function getRandom($limit){
+        $productos = $this->db->query("SELECT * FROM products ORDER BY RAND() LIMIT $limit");
+        return $productos;
+    }
+
     public function save(){
         $sql = "INSERT INTO products VALUES(NULL,'{$this->getCategoria_id()}', '{$this->getName()}','{$this->getDescription()}','{$this->getPrice()}','{$this->getStock()}',NULL,CURDATE(),'{$this->getImg()}')";
         $save = $this->db->query($sql);
