@@ -87,6 +87,17 @@ class productController
         header("Location:" . domain . 'productController/gestion');
     }
 
+    public function ver(){
+        if(isset($_GET['id'])) {
+
+            $producto = new Producto();
+            $producto->setId($_GET['id']);
+            $pro = $producto->getOne();
+        }
+            require_once "views/products/ver.php";
+
+    }
+
     public function editar(){
         Utils::isAdmin();
         if(isset($_GET['id'])) {

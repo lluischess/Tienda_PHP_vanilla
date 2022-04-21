@@ -7,7 +7,7 @@
         <h2><?=$pro->name_product?></h2>
         <p><?=$pro->description_product?></p>
         <p><?=$pro->price?></p>
-        <a href="" class="button">Comprar</a>
+        <a href="<?=domain?>producto/ver&id=<?=$pro->id?>" class="button">Comprar</a>
     </div>
     <?php endwhile;?>
 </div>
