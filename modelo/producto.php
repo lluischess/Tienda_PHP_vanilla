@@ -111,6 +111,11 @@ class Producto {
         return $productos;
     }
 
+    public function getAllFromCat(){
+        $productos = $this->db->query("SELECT p.*, c.name_categori FROM products p INNER JOIN categoris c ON c.id = p.category_id WHERE p.category_id = {$this->getCategoria_id()}");
+        return $productos;
+    }
+
     public function save(){
         $sql = "INSERT INTO products VALUES(NULL,'{$this->getCategoria_id()}', '{$this->getName()}','{$this->getDescription()}','{$this->getPrice()}','{$this->getStock()}',NULL,CURDATE(),'{$this->getImg()}')";
         $save = $this->db->query($sql);

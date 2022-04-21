@@ -44,10 +44,16 @@ class categoryController
 
     public function ver(){
         if (isset($_GET['id'])){
+            // Categoria
             $categoria = new Category();
             $categoria->setId($_GET['id']);
             $category = $categoria->getOne();
             $category = $category->fetch_object();
+
+            //Productos
+            $producto = new Producto();
+            $producto->setCategoria_id($_GET['id']);
+            $productos = $producto->getAllFromCat();
         }
         require_once 'views/category/ver.php';
     }
