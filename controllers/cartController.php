@@ -20,23 +20,33 @@ class cartController{
 
         // Revisamos si existe la sessión cart
         if(isset($_SESSION['cart'])){
+            $cont = 0;
+            foreach ($_SESSION['cart'] as $i => $elemento){
+                if($elemento['id'] == $product_id){
+                    $_SESSION['cart'][$i]['unidades']++;
+                    $cont++;
+                }
+            }
 
-        }else{
+        }
+
+        if (!isset($cont) || $cont == 0) {
             // conseguir producto
             $producto = new Producto();
             $producto->setId($product_id);
             $productoobtenido = $producto->getOne();
 
-            if(is_object($producto)){
+            if (is_object($producto)) {
                 $_SESSION['cart'][] = array(
-                  "id" => $productoobtenido->id,
-                  "price" => $productoobtenido->price,
-                  "unidades" => 1,
-                  "producto" => $producto
+                    "id" => $productoobtenido->id,
+                    "price" => $productoobtenido->price,
+                    "unidades" => 1,
+                    "producto" => $producto
                 );
             }
-            $_SESSION['cart'];
         }
+
+
         header('Location:'.domain."cartController/index");
     }
 
