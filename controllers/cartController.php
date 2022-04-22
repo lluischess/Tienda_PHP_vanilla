@@ -5,8 +5,8 @@ require_once "modelo/producto.php";
 class cartController{
 
     public function index(){
-        var_dump($_SESSION['cart']);
-        echo "Controlador cart index";
+        $cart = $_SESSION['cart'];
+        require_once "views/cart/ver.php";
     }
 
     public function add(){
@@ -41,7 +41,7 @@ class cartController{
                     "id" => $productoobtenido->id,
                     "price" => $productoobtenido->price,
                     "unidades" => 1,
-                    "producto" => $producto
+                    "producto" => $productoobtenido
                 );
             }
         }

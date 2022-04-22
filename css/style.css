@@ -184,6 +184,10 @@ button, .button, .buttonb{
     cursor: pointer;
 }
 
+img{
+    height: 160px;
+}
+
 .button{
     background: #22a81d;
     margin: 2px;
