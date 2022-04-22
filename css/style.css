@@ -228,3 +228,25 @@ button, .button, .buttonb{
     margin-right: 10px;
     text-align: center;
 }
+#detail-product{
+    width: 100%;
+}
+#detail-product .img-product{
+    display: block;
+    width: 40%;
+    float: left;
+    margin-right: 40px ;
+}
+
+#detail-product .data-product{
+    width: 44%;
+    float: right;
+}
+#detail-product .data-product p{
+    margin-bottom: 8px;
+}
+
+#detail-product .data-product .price{
+    font-size: 20px;
+    color: #444;
+}
