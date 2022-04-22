@@ -7,7 +7,7 @@
         <div class="data-product">
             <p><?=$pro->description_product?></p>
             <p class="price"><?=$pro->price?> €</p>
-            <a href="" class="button button-s">Comprar</a>
+            <a href="<?=domain?>cartController/add&id=<?=$pro->id?>" class="button button-s">Comprar</a>
         </div>
     </div>
 <?php else: ?>
