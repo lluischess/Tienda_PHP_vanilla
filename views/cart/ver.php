@@ -20,4 +20,4 @@
 <br>
 <?php $stats = Utils::statscart(); ?>
 <h3>Precio total: <?= $stats['total']?> €</h3>
-<a href="" class="button button-s">Hacer pedido</a>
+<a href="<?=domain?>orderController/prepare" class="button button-s">Hacer pedido</a>
