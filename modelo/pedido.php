@@ -100,9 +100,9 @@ class Pedido{
     }
 
     public function getOneByUser(){
-        $sql = "SELECT o.id, o.coste FROM orders p "
+        $sql = "SELECT o.id, o.coste FROM orders o "
             //. "INNER JOIN lineas_pedidos lp ON lp.pedido_id = p.id "
-            . "WHERE p.usuario_id = {$this->getUsuario_id()} ORDER BY id DESC LIMIT 1";
+            . "WHERE o.user_id = {$this->getUsuario_id()} ORDER BY id DESC LIMIT 1";
 
         $pedido = $this->db->query($sql);
 
@@ -123,9 +123,9 @@ class Pedido{
 //		$sql = "SELECT * FROM productos WHERE id IN "
 //				. "(SELECT producto_id FROM lineas_pedidos WHERE pedido_id={$id})";
 
-        $sql = "SELECT pr.*, lp.unidades FROM productos pr "
-            . "INNER JOIN lineas_pedidos lp ON pr.id = lp.producto_id "
-            . "WHERE lp.pedido_id={$id}";
+        $sql = "SELECT pr.*, lp.units FROM orders pr "
+            . "INNER JOIN order_details lp ON pr.id = lp.product_id "
+            . "WHERE lp.order_id={$id}";
 
         $productos = $this->db->query($sql);
 

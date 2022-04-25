@@ -1,5 +1,6 @@
 <?php
 
+require_once 'modelo/pedido.php';
 class orderController{
 
     public function index(){
@@ -44,16 +45,16 @@ class orderController{
                 $_SESSION['pedido'] = "failed";
             }
 
-            header("Location:".base_url.'pedido/confirmado');
+            header("Location:".domain.'orderController/confirmado');
         }else{
             // Redigir al index
-            header("Location:".base_url);
+            header("Location:".domain);
         }
     }
 
     public function confirmado(){
-        if(isset($_SESSION['identity'])){
-            $identity = $_SESSION['identity'];
+        if(isset($_SESSION['user_login']) || isset($_SESSION['admin_login'])){
+            $identity = isset($_SESSION['user_login']) ? $_SESSION['user_login'] : $_SESSION['admin_login'];
             $pedido = new Pedido();
             $pedido->setUsuario_id($identity->id);
 
