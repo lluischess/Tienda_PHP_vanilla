@@ -26,4 +26,21 @@ class Utils {
 
         return $all_categoris;
     }
+
+    public static function statscart(){
+        $stats = array(
+            'count' => 0,
+            'total' => 0,
+        );
+
+        if(isset($_SESSION['cart'])){
+            $stats['count'] = count($_SESSION['cart']);
+
+            foreach ($_SESSION['cart'] as $index => $value){
+                $stats['total'] += $value['price']*$value['unidades'];
+            }
+        }
+
+        return $stats;
+    }
 }

@@ -1,5 +1,17 @@
 <aside id="lateral">
+    
+    <div id="cart" class="block_aside">
+        <h3>Mi carrito</h3>
+        <ul>
+            <?php $stats = Utils::statscart(); ?>
+            <li><a href="<?=domain?>cartController/index">Total: <?= $stats['total'] ?>€ </a></li>
+            <li><a href="<?=domain?>cartController/index">Productos: <?= $stats['count'] ?> </a></li>
+            <li><a href="<?=domain?>cartController/index">Ver el carrito</a></li>
+        </ul>
+    </div>
+    
     <div id="login" class="block_aside">
+        
         <?php if(!isset($_SESSION['user_login'])): ?>
             <h3>Login</h3>
             <form action="<?=domain?>userController/login" method="POST">
