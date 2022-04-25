@@ -121,7 +121,7 @@ class Pedido{
 //		$sql = "SELECT * FROM productos WHERE id IN "
 //				. "(SELECT producto_id FROM lineas_pedidos WHERE pedido_id={$id})";
 
-        $sql = "SELECT pr.*, lp.units FROM orders pr "
+        $sql = "SELECT pr.*, lp.units FROM products pr "
             . "INNER JOIN order_details lp ON pr.id = lp.product_id "
             . "WHERE lp.order_id={$id}";
 

@@ -19,6 +19,7 @@
                 <th>Precio</th>
                 <th>Unidades</th>
             </tr>
+
             <?php while ($producto = $productos->fetch_object()): ?>
                 <tr>
                     <td>
@@ -35,7 +36,7 @@
                         <?= $producto->price ?>
                     </td>
                     <td>
-                        <?= $producto->unidades ?>
+                        <?= $producto->units ?>
                     </td>
                 </tr>
             <?php endwhile; ?>
