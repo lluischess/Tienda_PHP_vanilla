@@ -9,7 +9,7 @@
         <h3>Datos del pedido:</h3>
 
         Número de pedido: <?= $pedido->id ?>   <br/>
-        Total a pagar: <?= $pedido->coste ?> $ <br/>
+        Total a pagar: <?= $pedido->total_price ?> $ <br/>
         Productos:
 
         <table>
@@ -22,17 +22,17 @@
             <?php while ($producto = $productos->fetch_object()): ?>
                 <tr>
                     <td>
-                        <?php if ($producto->imagen != null): ?>
-                            <img src="<?= base_url ?>uploads/images/<?= $producto->imagen ?>" class="img_carrito" />
+                        <?php if ($producto->image != null): ?>
+                            <img src="<?= domain ?>uploads/img/<?= $producto->image ?>" class="img_carrito" />
                         <?php else: ?>
-                            <img src="<?= base_url ?>assets/img/camiseta.png" class="img_carrito" />
+                            <img src="<?= domain ?>assets/img/logo.png" class="img_carrito" />
                         <?php endif; ?>
                     </td>
                     <td>
-                        <a href="<?= base_url ?>producto/ver&id=<?= $producto->id ?>"><?= $producto->nombre ?></a>
+                        <a href="<?= domain ?>productController/ver&id=<?= $producto->id ?>"><?= $producto->name_product ?></a>
                     </td>
                     <td>
-                        <?= $producto->precio ?>
+                        <?= $producto->price ?>
                     </td>
                     <td>
                         <?= $producto->unidades ?>

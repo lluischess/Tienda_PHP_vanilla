@@ -100,9 +100,7 @@ class Pedido{
     }
 
     public function getOneByUser(){
-        $sql = "SELECT o.id, o.coste FROM orders o "
-            //. "INNER JOIN lineas_pedidos lp ON lp.pedido_id = p.id "
-            . "WHERE o.user_id = {$this->getUsuario_id()} ORDER BY id DESC LIMIT 1";
+        $sql = "SELECT id, total_price FROM orders WHERE user_id = {$this->getUsuario_id()} ORDER BY id DESC LIMIT 1";
 
         $pedido = $this->db->query($sql);
 
@@ -133,7 +131,7 @@ class Pedido{
     }
 
     public function save(){
-        $sql = "INSERT INTO orders VALUES(NULL, {$this->getUsuario_id()}, '{$this->getProvincia()}', '{$this->getLocalidad()}', '{$this->getDireccion()}', {$this->getCoste()}, 'confirm', CURDATE(), CURTIME());";
+        $sql = "INSERT INTO orders VALUES(NULL, {$this->getUsuario_id()}, '{$this->getProvincia()}', '{$this->getLocalidad()}', '{$this->getDireccion()}', {$this->getCoste()}, 'confirm', CURDATE());";
         $save = $this->db->query($sql);
 
         $result = false;
@@ -146,7 +144,8 @@ class Pedido{
     public function save_linea(){
         $sql = "SELECT LAST_INSERT_ID() as 'orders';";
         $query = $this->db->query($sql);
-        $pedido_id = $query->fetch_object()->pedido;
+        $pedido_id = $query->fetch_object()->orders;
+
 
         foreach($_SESSION['cart'] as $elemento){
             $producto = $elemento['producto'];

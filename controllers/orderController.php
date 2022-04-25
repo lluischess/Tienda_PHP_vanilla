@@ -63,7 +63,7 @@ class orderController{
             $pedido_productos = new Pedido();
             $productos = $pedido_productos->getProductosByPedido($pedido->id);
         }
-        require_once 'views/pedido/confirmado.php';
+        require_once 'views/order/confirmado.php';
     }
 
     public function mis_pedidos(){
@@ -75,7 +75,7 @@ class orderController{
         $pedido->setUsuario_id($usuario_id);
         $pedidos = $pedido->getAllByUser();
 
-        require_once 'views/pedido/mis_pedidos.php';
+        require_once 'views/order/mis_pedidos.php';
     }
 
     public function detalle(){
@@ -93,9 +93,9 @@ class orderController{
             $pedido_productos = new Pedido();
             $productos = $pedido_productos->getProductosByPedido($id);
 
-            require_once 'views/pedido/detalle.php';
+            require_once 'views/order/detalle.php';
         }else{
-            header('Location:'.base_url.'pedido/mis_pedidos');
+            header('Location:'.domain.'pedido/mis_pedidos');
         }
     }
 
@@ -106,7 +106,7 @@ class orderController{
         $pedido = new Pedido();
         $pedidos = $pedido->getAll();
 
-        require_once 'views/pedido/mis_pedidos.php';
+        require_once 'views/order/mis_pedidos.php';
     }
 
     public function estado(){
