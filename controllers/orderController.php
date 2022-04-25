@@ -9,4 +9,8 @@ class orderController{
     public function prepare(){
         require_once 'views/order/prepare.php';
     }
+
+    public function add(){
+
+    }
 }
