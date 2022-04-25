@@ -90,17 +90,17 @@ class Pedido{
     }
 
     public function getAll(){
-        $productos = $this->db->query("SELECT * FROM pedidos ORDER BY id DESC");
-        return $productos;
+        $orders = $this->db->query("SELECT * FROM orders ORDER BY id DESC");
+        return $orders;
     }
 
     public function getOne(){
-        $producto = $this->db->query("SELECT * FROM pedidos WHERE id = {$this->getId()}");
-        return $producto->fetch_object();
+        $order = $this->db->query("SELECT * FROM orders WHERE id = {$this->getId()}");
+        return $order->fetch_object();
     }
 
     public function getOneByUser(){
-        $sql = "SELECT p.id, p.coste FROM pedidos p "
+        $sql = "SELECT o.id, o.coste FROM orders p "
             //. "INNER JOIN lineas_pedidos lp ON lp.pedido_id = p.id "
             . "WHERE p.usuario_id = {$this->getUsuario_id()} ORDER BY id DESC LIMIT 1";
 
@@ -110,7 +110,7 @@ class Pedido{
     }
 
     public function getAllByUser(){
-        $sql = "SELECT p.* FROM pedidos p "
+        $sql = "SELECT p.* FROM orders p "
             . "WHERE p.usuario_id = {$this->getUsuario_id()} ORDER BY id DESC";
 
         $pedido = $this->db->query($sql);
@@ -133,7 +133,7 @@ class Pedido{
     }
 
     public function save(){
-        $sql = "INSERT INTO pedidos VALUES(NULL, {$this->getUsuario_id()}, '{$this->getProvincia()}', '{$this->getLocalidad()}', '{$this->getDireccion()}', {$this->getCoste()}, 'confirm', CURDATE(), CURTIME());";
+        $sql = "INSERT INTO orders VALUES(NULL, {$this->getUsuario_id()}, '{$this->getProvincia()}', '{$this->getLocalidad()}', '{$this->getDireccion()}', {$this->getCoste()}, 'confirm', CURDATE(), CURTIME());";
         $save = $this->db->query($sql);
 
         $result = false;
@@ -144,20 +144,15 @@ class Pedido{
     }
 
     public function save_linea(){
-        $sql = "SELECT LAST_INSERT_ID() as 'pedido';";
+        $sql = "SELECT LAST_INSERT_ID() as 'orders';";
         $query = $this->db->query($sql);
         $pedido_id = $query->fetch_object()->pedido;
 
-        foreach($_SESSION['carrito'] as $elemento){
+        foreach($_SESSION['cart'] as $elemento){
             $producto = $elemento['producto'];
 
-            $insert = "INSERT INTO lineas_pedidos VALUES(NULL, {$pedido_id}, {$producto->id}, {$elemento['unidades']})";
+            $insert = "INSERT INTO order_details VALUES(NULL, {$pedido_id}, {$producto->id}, {$elemento['unidades']})";
             $save = $this->db->query($insert);
-
-//			var_dump($producto);
-//			var_dump($insert);
-//			echo $this->db->error;
-//			die();
         }
 
         $result = false;
