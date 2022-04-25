@@ -7,6 +7,7 @@
             <li><a href="<?=domain?>cartController/index">Total: <?= $stats['total'] ?>€ </a></li>
             <li><a href="<?=domain?>cartController/index">Productos: <?= $stats['count'] ?> </a></li>
             <li><a href="<?=domain?>cartController/index">Ver el carrito</a></li>
+            <li><a href="<?=domain?>orderController/mis_pedidos">Ver Pedidos</a></li>
         </ul>
     </div>
     

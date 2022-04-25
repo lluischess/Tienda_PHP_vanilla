@@ -67,8 +67,8 @@ class orderController{
     }
 
     public function mis_pedidos(){
-        Utils::isIdentity();
-        $usuario_id = $_SESSION['identity']->id;
+        Utils::isAdmin();
+        $usuario_id = $_SESSION['user_login']->id;
         $pedido = new Pedido();
 
         // Sacar los pedidos del usuario
@@ -79,7 +79,7 @@ class orderController{
     }
 
     public function detalle(){
-        Utils::isIdentity();
+        Utils::isAdmin();
 
         if(isset($_GET['id'])){
             $id = $_GET['id'];
@@ -95,7 +95,7 @@ class orderController{
 
             require_once 'views/order/detalle.php';
         }else{
-            header('Location:'.domain.'pedido/mis_pedidos');
+            header('Location:'.domain.'orderController/mis_pedidos');
         }
     }
 
@@ -122,9 +122,9 @@ class orderController{
             $pedido->setEstado($estado);
             $pedido->edit();
 
-            header("Location:".base_url.'pedido/detalle&id='.$id);
+            header("Location:".domain.'pedido/detalle&id='.$id);
         }else{
-            header("Location:".base_url);
+            header("Location:".domain);
         }
     }
 }
