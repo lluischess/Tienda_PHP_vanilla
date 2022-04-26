@@ -122,7 +122,7 @@ class orderController{
             $pedido->setEstado($estado);
             $pedido->edit();
 
-            header("Location:".domain.'pedido/detalle&id='.$id);
+            header("Location:".domain.'orderController/detalle&id='.$id);
         }else{
             header("Location:".domain);
         }

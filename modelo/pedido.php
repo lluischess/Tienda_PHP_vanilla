@@ -161,7 +161,7 @@ class Pedido{
     }
 
     public function edit(){
-        $sql = "UPDATE pedidos SET estado='{$this->getEstado()}' ";
+        $sql = "UPDATE orders SET status_order='{$this->getEstado()}' ";
         $sql .= " WHERE id={$this->getId()};";
 
         $save = $this->db->query($sql);

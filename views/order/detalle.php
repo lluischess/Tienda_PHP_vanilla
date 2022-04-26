@@ -1,7 +1,7 @@
 <h1>Detalle del pedido</h1>
 
 <?php if (isset($pedido)): ?>
-		<?php if(isset($_SESSION['admin'])): ?>
+		<?php if(isset($_SESSION['admin_login'])): ?>
 			<h3>Cambiar estado del pedido</h3>
 			<form action="<?=domain?>orderController/estado" method="POST">
 				<input type="hidden" value="<?=$pedido->id?>" name="pedido_id"/>
