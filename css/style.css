@@ -104,12 +104,17 @@ td{
     background: #ffffff;
 }
 
+aside{
+    background: #111111;
+}
+
 #lateral{
     width: 25%;
     float: left;
     margin-top: 5%;
     margin-bottom: 5%;
     min-height: 500px;
+    background-color: #2fa2d8;
 }
 
 #lateral h3{

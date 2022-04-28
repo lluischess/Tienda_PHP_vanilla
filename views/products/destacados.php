@@ -1,4 +1,4 @@
-<div id="central">
+
     <h1>Productos destacados</h1>
 
     <?php while ($pro = $productos->fetch_object()): ?>
@@ -10,4 +10,3 @@
         <a href="<?=domain?>productController/ver&id=<?=$pro->id?>" class="button">Ver</a>
     </div>
     <?php endwhile;?>
-</div>

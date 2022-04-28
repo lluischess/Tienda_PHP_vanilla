@@ -1,5 +1,5 @@
 <aside id="lateral">
-    
+    <?php if(isset($_SESSION['user_login']) || isset($_SESSION['admin_login'])): ?>
     <div id="cart" class="block_aside">
         <h3>Mi carrito</h3>
         <ul>
@@ -10,6 +10,7 @@
             <li><a href="<?=domain?>orderController/mis_pedidos">Ver Pedidos</a></li>
         </ul>
     </div>
+    <?php endif; ?>
     
     <div id="login" class="block_aside">
         
